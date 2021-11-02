@@ -1,9 +1,11 @@
 import * as http from 'http';
 import { configLoader } from './config/config';
-import { requestProcessor } from './processor/reqProcessor';
+import { RequestProcessor } from './processor/ReqProcessor';
+import { MongoProvider } from './mongodb/MongoProvider';
 
 const configuration = new configLoader();
-const reqProc = new requestProcessor();
+const mongoProvider = new MongoProvider(configuration.mongoURL, configuration.mongoPort);
+const reqProc = new RequestProcessor();
 const server = http.createServer((req, res) => {
     res = reqProc.processReq(req, res);
 });

@@ -5,12 +5,14 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "compile": "tsc -t es5 src/index.ts"
+    "compile:config": "tsc -p ./tsconfig.json",
+    "compile": "tsc"
   },
   "author": "Ignacio Ribera Diaz",
   "license": "ISC",
   "dependencies": {
-    "@types/node": "^16.11.1"
+    "@types/node": "^16.11.1",
+    "mongodb": "^4.1.3"
   },
   "devDependencies": {}
 }

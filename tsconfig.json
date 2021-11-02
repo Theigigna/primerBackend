@@ -1,0 +1,30 @@
+{
+    "$schema": "https://json.schemastore.org/tsconfig",
+    "display": "Node 12",
+    "compileOnSave": true,
+    "compilerOptions": {
+      "module": "es2015",
+      "target": "es5",
+      "moduleResolution": "node",
+      "rootDir": "./src",
+      "outDir": "./dist",
+      "composite": true,
+      "declaration": true,
+      "declarationMap": true,
+      "sourceMap": true,
+      "strict": true,
+      "alwaysStrict": true,
+      "resolveJsonModule": false,
+      "esModuleInterop": true,
+      "noImplicitAny": true,
+      "noImplicitReturns": true,
+      "importHelpers": true,
+      "removeComments": false,
+      "skipLibCheck": true,
+      "forceConsistentCasingInFileNames": true,
+      "pretty": true
+    },
+    "exclude": ["node_modules/**", "docs/", ".config/", ".assets/", "dist/", "src/**/*.test.ts"],
+    "include": ["src/**/*", "src/**/*.ts", "src/**/*.yml", "src/**/*.yaml"]
+  }
+  

@@ -74,3 +74,9 @@ typings/
 
 # FuseBox cache
 .fusebox/
+
+# JS files
+**/*.js
+
+# build output
+dist/

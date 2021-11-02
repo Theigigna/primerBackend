@@ -2,11 +2,11 @@ import * as http from 'http';
 import * as url from 'url';
 import { ParsedUrlQuery } from 'querystring';
 
-export class requestProcessor{
+export class RequestProcessor{
     processReq(request: http.IncomingMessage, response: http.ServerResponse): http.ServerResponse {
         // console.log(JSON.stringify(request));
-        const reqUrl: string = request.url;
-        const reqPathName: string = url.parse(reqUrl, true).pathname;
+        const reqUrl: string = request.url || '';
+        const reqPathName: string = url.parse(reqUrl, true).pathname || '';
         const splitedUrl: string[] = reqPathName.split('api/v1/');
         const reqQueryData = url.parse(reqUrl, true).query;
         
