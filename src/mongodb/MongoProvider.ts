@@ -17,13 +17,29 @@ export class MongoProvider {
 
   public findUser(userName: string): User | Error {
     if (userName != "") {
-      const users = this._repository.findUser(userName);
-      return users;
+      this._repository
+        .findUser(userName)
+        .then((result) => {
+          console.log("then");
+          return result;
+        })
+        .catch((error) => {
+          console.log("catch");
+          console.log(JSON.stringify(error));
+          return {
+            message: JSON.stringify(error),
+            errorCode: 400,
+          };
+        });
     } else {
       return {
         message: "El campo userName no puede ser vacio",
         errorCode: 400,
       };
     }
+    return {
+      message: "No return in function findUser",
+      errorCode: 400,
+    };
   }
 }
